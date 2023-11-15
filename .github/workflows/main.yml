@@ -25,7 +25,29 @@ jobs:
   
       - name: Build
         run: npm run build
-  
+
+  scripts-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: npm ci
+      - name : script 1
+        run: npm run test
+  scripts-check-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: npm ci
+      - name : script 1
+        run: npm run lint:check
+  scripts-check-format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: npm ci
+      - name : script 1
+        run: npm run format:check
+      
   
   hello_world_job:
     # As with workflow names (and even step names), job names are not
